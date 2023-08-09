@@ -1,0 +1,76 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://PlayerAnimCabin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://compass_piece4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://InternalDoor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Audio/Space environment 1 - 20:6:21, 5.48 pm.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Chair.tscn" type="PackedScene" id=7]
+[ext_resource path="res://topTile.tres" type="TileSet" id=8]
+[ext_resource path="res://lounge.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Table.tscn" type="PackedScene" id=10]
+[ext_resource path="res://rug.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Wall.tres" type="TileSet" id=12]
+[ext_resource path="res://CameraFollow2.gd" type="Script" id=13]
+
+[node name="Cabin Internal" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource( 2 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 3, 0, 2, 3, 0, 4, 3, 0, 6, 3, 0, 8, 3, 0, 10, 3, 0, 12, 3, 0, 13, 3, 0, 15, 3, 0, 131072, 3, 0, 131074, 3, 0, 131076, 3, 0, 131078, 3, 0, 131079, 3, 0, 131081, 3, 0, 131083, 3, 0, 131084, 3, 0, 131086, 3, 0, 262144, 3, 0, 262146, 3, 0, 262148, 3, 0, 262150, 3, 0, 262152, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262158, 3, 0, 393216, 3, 0, 393218, 3, 0, 393220, 3, 0, 393221, 3, 0, 393223, 3, 0, 393224, 3, 0, 393226, 3, 0, 393228, 3, 0, 393230, 3, 0, 458752, 3, 0, 458754, 3, 0, 458756, 3, 0, 458757, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458763, 3, 0, 458765, 3, 0, 458766, 3, 0 )
+
+[node name="TileMap_top" type="TileMap" parent="."]
+visible = false
+tile_set = ExtResource( 8 )
+format = 1
+tile_data = PoolIntArray( -65538, 3, 0, -131072, 3, 0, -131070, 3, 0, -131068, 3, 0, -131066, 3, 0, -131064, 3, 0, -131062, 3, 0, -131061, 3, 0, -131059, 3, 0, -131058, 3, 0, -131056, 3, 0, -2, 3, 0, 16, 3, 0, 131070, 3, 0, 131088, 3, 0, 262141, 3, 0, 262142, 3, 0, 196624, 3, 0, 393214, 3, 0, 327696, 3, 0, 524286, 3, 0, 458768, 3, 0, 655358, 3, 0, 589824, 3, 0, 589825, 3, 0, 589827, 3, 0, 589829, 3, 0, 589834, 3, 0, 589836, 3, 0, 589838, 3, 0, 589840, 3, 0, 655361, 3, 0 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+rotation = 1.5708
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 12 )
+format = 1
+tile_data = PoolIntArray( -11993120, 0, 0, -12058624, 0, 0, -12058592, 0, 0, -12058562, 0, 0, -12058533, 0, 0, -12058530, 0, 0, -10944544, 0, 0, -10813346, 0, 0, -9371680, 0, 0, -9371554, 0, 0, -7798816, 0, 0, -7798690, 0, 0, -6225952, 0, 0, -6225826, 0, 0, -4653088, 0, 0, -4718498, 0, 0, -3080224, 0, 0, -3145634, 0, 0, -1507360, 0, 0, -1572770, 0, 0, 65504, 0, 0, 65535, 0, 0, 30, 0, 0, 59, 0, 0, 71, 0, 0, 94, 0, 0 )
+
+[node name="InternalDoor" parent="." instance=ExtResource( 5 )]
+position = Vector2( 537.411, 699.155 )
+scale = Vector2( 1, 1.5 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="rug" parent="." instance=ExtResource( 11 )]
+position = Vector2( 613.007, 278.667 )
+
+[node name="compass_piece4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 257.387, 438.407 )
+
+[node name="Chair" parent="." instance=ExtResource( 7 )]
+position = Vector2( 353.076, 144.985 )
+
+[node name="Table" parent="." instance=ExtResource( 10 )]
+position = Vector2( 589.522, 276.809 )
+
+[node name="lounge" parent="." instance=ExtResource( 9 )]
+position = Vector2( 585.836, 99.9436 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 53.7155, 482.029 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 513, 301 )
+current = true
+script = ExtResource( 13 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 523.26, 255.973 )
+stream = ExtResource( 6 )
+autoplay = true
+
+[connection signal="body_entered" from="InternalDoor" to="InternalDoor" method="_on_InternalDoor_body_entered"]
+[connection signal="body_entered" from="compass_piece4" to="compass_piece4" method="_on_compass_piece4_body_entered"]

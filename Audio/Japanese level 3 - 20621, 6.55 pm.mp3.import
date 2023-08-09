@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Japanese level 3 - 20:6:21, 6.55 pm.mp3-0de19f292a05341b621625c7e18e7cdb.mp3str"
+
+[deps]
+
+source_file="res://Audio/Japanese level 3 - 20:6:21, 6.55 pm.mp3"
+dest_files=[ "res://.import/Japanese level 3 - 20:6:21, 6.55 pm.mp3-0de19f292a05341b621625c7e18e7cdb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

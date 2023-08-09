@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sci fi space tranquility 2 - 20:6:21, 5.45 pm.mp3-fa2456dce94bc76f489461a72304085a.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sci fi space tranquility 2 - 20:6:21, 5.45 pm.mp3"
+dest_files=[ "res://.import/Sci fi space tranquility 2 - 20:6:21, 5.45 pm.mp3-fa2456dce94bc76f489461a72304085a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
