@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/UI_square.png" type="Texture" id=1]
+[ext_resource path="res://UI.gd" type="Script" id=2]
+
+[node name="UI" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="TextureRect" parent="."]
+self_modulate = Color( 0.270588, 0.270588, 0.270588, 1 )
+anchor_left = 14.3354
+anchor_top = 14.8896
+anchor_right = 14.3354
+anchor_bottom = 14.8896
+margin_left = -186.0
+margin_top = -95.5859
+margin_right = 63.9999
+margin_bottom = -35.5859
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelBG" type="TextureRect" parent="BG"]
+anchor_top = 0.00833333
+anchor_bottom = 0.00833333
+margin_top = 0.5
+margin_right = 74.0
+margin_bottom = 57.5
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelText" type="Label" parent="BG/LevelBG"]
+self_modulate = Color( 0.521569, 0.513726, 0.513726, 1 )
+anchor_left = -0.00684932
+anchor_top = -0.00892857
+anchor_right = -0.00684932
+anchor_bottom = -0.00892857
+margin_right = 76.0
+margin_bottom = 57.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="TextureProgress" parent="BG"]
+anchor_left = 0.302
+anchor_right = 0.302
+margin_left = -0.500008
+margin_top = 2.0
+margin_right = 171.5
+margin_bottom = 28.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 1 )
+tint_under = Color( 0.317647, 0.298039, 0.298039, 1 )
+tint_progress = Color( 0.372549, 0.870588, 0.0627451, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="XpBar" type="TextureProgress" parent="BG"]
+anchor_left = 0.304
+anchor_top = 0.659
+anchor_right = 0.304
+anchor_bottom = 0.659
+margin_left = -1.00001
+margin_top = -8.54
+margin_right = 172.0
+margin_bottom = 15.46
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 1 )
+tint_under = Color( 0.270588, 0.262745, 0.262745, 1 )
+tint_progress = Color( 0.909804, 0.2, 0.0588235, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldText" type="Label" parent="BG"]
+anchor_top = -0.417
+anchor_bottom = -0.417
+margin_left = 3.0
+margin_top = 0.0200024
+margin_right = 241.0
+margin_bottom = 22.02
+text = "Gold: 500"
+align = 1
+valign = 1

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://InternalDoor.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Tiles/wall.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 101.997, 77.2994 )
+
+[node name="InternalDoor" type="Area2D"]
+script = ExtResource( 1 )
+next_scene_path = "res://MainScene.tscn"
+
+[node name="Cabin2" type="Sprite" parent="."]
+self_modulate = Color( 0.631373, 0.529412, 0.529412, 1 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

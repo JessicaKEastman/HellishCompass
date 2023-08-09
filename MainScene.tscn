@@ -1,0 +1,84 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://compass_piece1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://CameraFollow.gd" type="Script" id=2]
+[ext_resource path="res://tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://PortaltoPlan.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cabin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://tileset2.tres" type="TileSet" id=7]
+[ext_resource path="res://SaveLoadGame.gd" type="Script" id=8]
+[ext_resource path="res://Audio/First_Area.mp3" type="AudioStream" id=9]
+[ext_resource path="res://PortaltoPlanet.gd" type="Script" id=10]
+[ext_resource path="res://PlayerAnim.tscn" type="PackedScene" id=11]
+[ext_resource path="res://compass_piece3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://compass_piece2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://topTileExt.tres" type="TileSet" id=14]
+
+[node name="MainScene" type="Node2D"]
+position = Vector2( -1, 0 )
+script = ExtResource( 8 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource( 6 )]
+
+[node name="TileMap_ground2" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+format = 1
+tile_data = PoolIntArray( -1507375, 0, 0, -1507360, 0, 0, -1572864, 0, 0, -1572832, 0, 0, 65489, 0, 0, 65504, 0, 0, 524288, 0, 0, 524320, 0, 0 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+format = 1
+tile_data = PoolIntArray( -24, 3, 0, 131048, 3, 0, 196584, 3, 0, 196586, 3, 0, 196588, 3, 0, 196590, 3, 0, 196592, 3, 0, 196594, 3, 0, 196596, 3, 0, 196598, 3, 0, 196600, 3, 0, 196602, 3, 0, 196604, 3, 0, 196606, 3, 0 )
+
+[node name="TileMap_above2" type="TileMap" parent="."]
+tile_set = ExtResource( 14 )
+format = 1
+tile_data = PoolIntArray( -2555966, 2, 0, -2555951, 2, 0, -2555919, 2, 0, -2621423, 2, 0, -2621391, 2, 0, -1703988, 0, 0, -1441871, 2, 0, -1507264, 2, 0, -983008, 1, 0, -982990, 1, 0, -786435, 1, 0, -720857, 1, 0, -393295, 2, 0, -393152, 2, 0, 327695, 1, 0, 458797, 0, 0, 524298, 1, 0, 524308, 1, 0, 655281, 2, 0, 720911, 1, 0, 720960, 2, 0, 1703857, 2, 0, 1835072, 2, 0, 2097104, 2, 0, 2097121, 2, 0, 2031616, 2, 0, 2031647, 2, 0, 2031649, 2, 0, 2162642, 2, 0 )
+
+[node name="Cabin" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1673.48, -558.262 )
+scale = Vector2( 3, 3 )
+next_scene_path = "res://CabinInternal.tscn"
+
+[node name="PortaltoPlanet" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2886.13, -1080.9 )
+script = ExtResource( 10 )
+next_scene_path = "res://AlienPlanet.tscn"
+
+[node name="compass_piece1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 741.048, 115.965 )
+
+[node name="compass_piece2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2656, -1072 )
+
+[node name="compass_piece3" parent="." instance=ExtResource( 12 )]
+position = Vector2( -2232.23, 86.1406 )
+
+[node name="Player" parent="." instance=ExtResource( 11 )]
+position = Vector2( 90.5096, 169.706 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 520, 302 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 674.58, -265.873 )
+stream = ExtResource( 9 )
+autoplay = true
+
+[connection signal="body_entered" from="Cabin" to="Cabin" method="_on_Cabin_body_entered"]
+[connection signal="body_entered" from="PortaltoPlanet" to="PortaltoPlanet" method="_on_PortaltoPlanet_body_entered"]
+[connection signal="body_entered" from="compass_piece1" to="compass_piece1" method="_on_compass_piece1_body_entered"]
+[connection signal="body_entered" from="compass_piece2" to="compass_piece2" method="_on_compass_piece2_body_entered"]
+[connection signal="body_entered" from="compass_piece3" to="compass_piece3" method="_on_compass_piece3_body_entered"]
